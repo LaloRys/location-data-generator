@@ -26,6 +26,21 @@ function ElevationGoogle() {
     setapiKey(e.target.value);
   };
 
+  const url = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
+
+  const handleSaludar = async () => {
+  
+    try {
+      console.log(process.env.API_LOCAL)
+      console.log(process.env.NEXT_PUBLIC_API_LOCAL)
+      console.log("URL", url)
+      const response = await axios.get(`${url}`)
+      console.log(response)
+    } catch (error) {
+      console.error("Error al saludar:", error);
+    }
+  }
+
   const handleUpload = async () => {
     if (file && apiKey) {
       const formData = new FormData();
@@ -35,7 +50,7 @@ function ElevationGoogle() {
       try {
         // Utilizando axios para hacer la petición POST
         const response = await axios.post(
-          "http://localhost:8000/uploadfile/",
+          `${url}/uploadfile/`,
           formData,
           {
             headers: {
@@ -58,7 +73,7 @@ function ElevationGoogle() {
 
   const handleDownload = () => {
     if (resultFile && resultFile.file_path) {
-      const downloadUrl = `http://localhost:8000/download/${resultFile.file_path}`;
+      const downloadUrl = `${url}/download/${resultFile.file_path}`;
   
       // Crear un enlace temporal y hacer clic en él para iniciar la descarga
       const link = document.createElement("a");
@@ -81,6 +96,9 @@ function ElevationGoogle() {
       />
       <Button onClick={handleUpload} color="primary">
         Upload and Process
+      </Button>
+      <Button onClick={handleSaludar} color="primary">
+        Saludar
       </Button>
       {resultFile && (
         <div>
