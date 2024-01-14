@@ -1,7 +1,20 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
-import { Button, Input } from "@nextui-org/react";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Chip,
+  Divider,
+  Input,
+  Spinner,
+} from "@nextui-org/react";
+import ModalOpenCage from "@/components/ModalOpenCage";
+import { CheckIcon } from "@/components/icons/icons";
+
 
 // Interfaz para el tipo de resultFile
 interface ResultFile {
@@ -15,6 +28,8 @@ function ElevationGoogle() {
   const [file, setFile] = React.useState<any>();
   const [apiKey, setapiKey] = useState("");
   const [resultFile, setResultFile] = React.useState<ResultFile | null>(null);
+  const [loading, setLoading] = useState(false);
+
 
   const handleFileChange = (event: any) => {
     setFile(event.target.files[0]);
@@ -42,6 +57,8 @@ function ElevationGoogle() {
   }
 
   const handleUpload = async () => {
+    setLoading(true);
+
     if (file && apiKey) {
       const formData = new FormData();
       formData.append("api_key", apiKey);
@@ -50,7 +67,7 @@ function ElevationGoogle() {
       try {
         // Utilizando axios para hacer la petición POST
         const response = await axios.post(
-          `${url}/uploadfile/`,
+          `${url}/elevationapi/`,
           formData,
           {
             headers: {
@@ -69,6 +86,8 @@ function ElevationGoogle() {
       console.error("No file or API key provided");
       alert("No file or API key provided");
     }
+    setLoading(false);
+
   };
 
   const handleDownload = () => {
@@ -86,28 +105,66 @@ function ElevationGoogle() {
   };
 
   return (
-    <div>
-      <h1>Upload Excel File</h1>
-      <Input type="file" className="w-1/2" onChange={handleFileChange} />
-      <Input
-        placeholder="Api Key"
-        className="w-1/4"
-        onChange={handleApiKeyChange}
-      />
-      <Button onClick={handleUpload} color="primary">
-        Upload and Process
-      </Button>
-      <Button onClick={handleSaludar} color="primary">
-        Saludar
-      </Button>
-      {resultFile && (
-        <div>
-          <p>Processed File:</p>
-          <p>Original Filename: {file?.name ?? "Sin nombre"}</p>
-          <p>New Filename: {resultFile?.file_path}</p>
-          <Button onClick={handleDownload} color="secondary">Download Processed File</Button>
-        </div>
-      )}
+    <div className="flex items-center justify-center">
+      <Card className="py-4 m-4">
+        <CardHeader className="grid grid-cols-1 items-center">
+          <div className="flex flex-col items-center justify-center">
+            <ModalOpenCage />
+          </div>
+        </CardHeader>
+        <Divider className="my-4" />
+
+        <CardBody className="overflow-visible py-2">
+          <div className="flex items-center justify-around py-2 gap-2">
+            <div>
+              <input type="file" onChange={handleFileChange} />
+              <Chip variant="light" color="primary" className="mt-1">
+                File: {file?.name ?? "No file selected"}
+              </Chip>
+            </div>
+            <Input
+              label="Api Key"
+              variant="bordered"
+              onChange={handleApiKeyChange}
+            />
+          </div>
+          <Divider className="my-4" />
+
+          {loading ? (
+            <Spinner
+              label="Processing..."
+              color="primary"
+              labelColor="primary"
+            />
+          ) : (
+            <Button onClick={handleUpload} color="primary">
+              Upload and Process
+            </Button>
+          )}
+          <Divider className="my-4" />
+
+          {resultFile && (
+            <div className="grid grid-cols-1 gap-2">
+              <Chip
+                startContent={<CheckIcon size={18} />}
+                variant="flat"
+                color="success"
+              >
+                Processed File
+              </Chip>
+              <Chip color="warning" variant="dot">Original Filename: {file?.name ?? "Sin nombre"}</Chip>
+              <Chip color="success" variant="dot">New Filename: {resultFile?.file_path}</Chip>
+              <Button onClick={handleDownload} color="secondary">
+                Download Processed File
+              </Button>
+            </div>
+          )}
+          <Divider className="my-4" />
+          <Button onClick={handleSaludar} color="primary">
+            Saludar
+          </Button>
+        </CardBody>
+      </Card>
     </div>
   );
 }
