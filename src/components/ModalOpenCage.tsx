@@ -29,16 +29,16 @@ export default function ModalOpenCage() {
                 <div className="flex flex-col items-center justify-center">
                   <p className="text-center text-sm font-semibold">
                     Make sure you have an Excel file with a sheet that contains
-                    two columns titled "latitude" and "longitude," both in
-                    lowercase. You can organize the data however you prefer
-                    within these columns. Check that the headings are spelled
-                    correctly.
+                    two columns titled &quot;latitude&quot; and
+                    &quot;longitude,&quot; both in lowercase. You can organize
+                    the data however you prefer within these columns. Check that
+                    the headings are spelled correctly.
                   </p>
-                  <Divider className="my-2"/>
+                  <Divider className="my-2" />
                   <p className="text-tiny text-center uppercase font-bold">
                     You must enter your opencage API KEY
                   </p>
-                  <Divider className="my-2"/>
+                  <Divider className="my-2" />
 
                   <small className="text-default-500">
                     The free trial has 2,500 API requests per day for testing.
