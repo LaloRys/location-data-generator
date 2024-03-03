@@ -14,6 +14,21 @@ export const publicRoutes = [
     name: "Elevation Google Api",
     path: "/elevationgoogle",
   },
+  {
+    id: "4",
+    name: "Summary",
+    path: "/summary",
+  },
+  {
+    id: "5",
+    name: "Map",
+    path: "/map",
+  },
+  {
+    id: "6",
+    name: "TEST",
+    path: "/test",
+  },
 ];
 
 export const privateRoutes = [
@@ -22,14 +37,4 @@ export const privateRoutes = [
     name: "Dashboard",
     path: "/dashboard",
   },
-  // {
-  //   id: "2",
-  //   name: "Agregar Paciente",
-  //   path: "/user",
-  // },
-  {
-    id: "3",
-    name: "Pacientes",
-    path: "/patients",
-  }
 ];
