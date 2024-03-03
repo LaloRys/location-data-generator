@@ -16,7 +16,7 @@ export default function MapComponent() {
     <MapContainer
       center={[geoData.lat, geoData.lng]}
       zoom={12}
-      scrollWheelZoom={false}
+      scrollWheelZoom={true}
       style={{ height: 400, width: 400 }}
     >
       <TileLayer

@@ -2,6 +2,11 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
+if (typeof window !== "undefined") {
+  require("leaflet-defaulticon-compatibility");
+  require("leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css");
+}
+
 const Map = () => {
   return (
     <MapContainer
