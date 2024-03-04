@@ -53,16 +53,14 @@ export default function NavbarUI() {
               onClick={() => {
                 setTheme("dark");
               }}
-            >
-            </DarkModeIcon>
+            ></DarkModeIcon>
           ) : (
             <LightModeIcon
               className="cursor-pointer text-xl text-yellow-300"
               onClick={() => {
                 setTheme("light");
               }}
-            >
-            </LightModeIcon>
+            ></LightModeIcon>
           )}
           {/* <Button color="primary" variant="bordered" onClick={handleSignOut}>
                   Log Out
@@ -76,7 +74,9 @@ export default function NavbarUI() {
             key={route.id}
             className={isCurrentRoute(route.path) ? "text-sky-500" : ""}
           >
-            <Link href={route.path}>{route.name}</Link>
+            <Link className="cursor-pointer" href={route.path}>
+              {route.name}
+            </Link>
           </NavbarItem>
         ))}
       </NavbarContent>
