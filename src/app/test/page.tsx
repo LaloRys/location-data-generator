@@ -42,6 +42,12 @@ async function TestPage() {
             <p>
               Ubicación: <span className="font-bold">{item["UBICACIÓN"]} </span>
             </p>
+            <p>
+              Elevation: <span className="font-bold">{item["ELEVATION"]} </span>
+            </p>
+            <p>
+              Commetns: <span className="font-bold">{item["COMMENTS"]} </span>
+            </p>
           </div>
         ))}
       </div>
