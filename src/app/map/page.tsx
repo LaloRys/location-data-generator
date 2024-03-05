@@ -1,38 +1,21 @@
-// "use client";
-// import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-// import "leaflet/dist/leaflet.css";
-
-// if (typeof window !== "undefined") {
-//   require("leaflet-defaulticon-compatibility");
-//   require("leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css");
-// }
-
-// const Map = () => {
-//   return (
-//     <MapContainer
-//       center={[51.505, -0.09]}
-//       zoom={13}
-//       scrollWheelZoom={false}
-//       style={{ height: 400, width: "100%" }}
-//     >
-//       <TileLayer
-//         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-//         url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-//       />
-//       <Marker position={[51.505, -0.09]}>
-//         <Popup>
-//           A pretty CSS3 popup. <br /> Easily customizable.
-//         </Popup>
-//       </Marker>
-//     </MapContainer>
-//   );
-// };
-
-// export default Map;
 import React from "react";
+import dynamic from "next/dynamic";
+import data from "../../data/DATA_PRT.json";
 
-function page() {
-  return <div>page</div>;
+const DynamicMap = dynamic(() => import("@/components/Map"), {
+  loading: () => <p>loading...</p>,
+  ssr: false,
+});
+
+function Map() {
+  return (
+    <div className="w-full h-[calc(100vh-60px)] p-8 ">
+      <h3 className="text-lg font-semibold mb-2">Map</h3>
+      <div className="grid grid-cols-1 h-[calc(100vh-180px)]">
+        <DynamicMap data={data} />
+      </div>
+    </div>
+  );
 }
 
-export default page;
+export default Map;

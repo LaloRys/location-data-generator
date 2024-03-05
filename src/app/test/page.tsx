@@ -3,7 +3,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { BarChart, LineChart, PieChart } from "@/components/ChartJS";
 import summarys from "../../data/summary_part.json";
-import TableData from "@/components/tables/PatientsTable";
+import TableData from "@/components/tables/Table";
 import data from "../../data/DATA_PRT.json";
 
 // async function getData() {
@@ -23,7 +23,7 @@ async function TestPage() {
   // console.log(data.data.data);
 
   return (
-    <section className="bg-white w-full h-[calc(100vh-60px)] p-8 overflow-y-auto">
+    <section className=" w-full h-[calc(100vh-60px)] p-8 ">
       <h2 className="text-2xl font-semibold mb-4">Resumen del Dashboard</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -55,14 +55,11 @@ async function TestPage() {
         </div>
       </div>
       <div>
-        <div className="mt-4">
+        <div className="mt-6">
           <TableData />
         </div>
-        <div className="grid grid-cols-2 h-96">
-          {/* <DynamicMap data={data.data.data} /> */}
-        </div>
 
-        <div className="grid grid-cols-3 gap-5 mx-4">
+        <div className="grid grid-cols-3 gap-5 mx-4 mt-4">
           {data.map((item: any, index: any) => (
             <div
               key={index}

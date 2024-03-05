@@ -1,5 +1,5 @@
 import React from "react";
-const columns = [
+const column = [
   { name: "ID", uid: "id", sortable: true },
   { name: "NAME", uid: "name", sortable: true },
   { name: "AGE", uid: "age", sortable: true },
@@ -8,6 +8,62 @@ const columns = [
   { name: "EMAIL", uid: "email" },
   { name: "STATUS", uid: "status", sortable: true },
   { name: "ACTIONS", uid: "actions" },
+];
+
+const columns = [
+  { name: "Accession ID", uid: "Accession ID", sortable: true },
+  { name: "INSTITUTECODE", uid: "institutecode", sortable: true },
+  { name: "Accession Prefix", uid: "Accession Prefix", sortable: true },
+  {
+    name: "Digital Object Identifier",
+    uid: "Digital Object Identifier",
+    sortable: true,
+  },
+  { name: "Hybrid Code", uid: "Hybrid Code", sortable: true },
+  { name: "Taxonomy Species", uid: "taxonomy_species", sortable: true },
+  { name: "Species Authority", uid: "Species Authority", sortable: true },
+  { name: "Taxonomy Subtaxa", uid: "taxonomy_subtaxa", sortable: true },
+  { name: "Taxonomy Subtauthor", uid: "taxonomy_subtauthor", sortable: true },
+  { name: "Cropname", uid: "cropname", sortable: true },
+  { name: "Accename", uid: "accename", sortable: true },
+  { name: "Acquisitiondate", uid: "acquisitiondate", sortable: true },
+  { name: "Origcty", uid: "origcty", sortable: true },
+  {
+    name: "Collector Verbatim Locality",
+    uid: "Collector Verbatim Locality",
+    sortable: true,
+  },
+  { name: "Latitude", uid: "Latitude", sortable: true },
+  { name: "Longitude", uid: "Longitude", sortable: true },
+  { name: "Elevation (meters)", uid: "Elevation (meters)", sortable: true },
+  { name: "Sampstat", uid: "sampstat", sortable: true },
+  { name: "Ancest", uid: "ancest", sortable: true },
+  { name: "Donornumb", uid: "donornumb", sortable: true },
+  { name: "Othernumb", uid: "othernumb", sortable: true },
+  { name: "Duplsiteacd", uid: "duplsiteacd", sortable: true },
+  { name: "Storageacd", uid: "storageacd", sortable: true },
+  { name: "Mlsstatus", uid: "mlsstatus", sortable: true },
+  { name: "Note", uid: "Note", sortable: true },
+  { name: "Acceurl", uid: "acceurl", sortable: true },
+  { name: "Available", uid: "available", sortable: true },
+  { name: "X", uid: "x", sortable: true },
+  { name: "Historic", uid: "historic", sortable: true },
+  { name: "ACTUAL", uid: "ACTUAL", sortable: true },
+  { name: "Alpha-3", uid: "Alpha-3", sortable: true },
+  { name: "UBICACIÓN", uid: "UBICACIÓN", sortable: true },
+  { name: "COORDENDA SUGERIDA", uid: "COORDENDA SUGERIDA", sortable: true },
+  { name: "ELEVATION", uid: "ELEVATION", sortable: true },
+  { name: "COMMENTS", uid: "COMMENTS", sortable: true },
+  { name: "NOTES", uid: "NOTES", sortable: true },
+];
+
+const INITIAL_VISIBLE_COLUMN = [
+  "institutecode",
+  "Accession Prefix",
+  "cropname",
+  "accename",
+  "Latitude",
+  "Longitude",
 ];
 
 const statusOptions = [

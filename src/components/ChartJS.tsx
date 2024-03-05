@@ -136,7 +136,8 @@ export function PieChart() {
     "rgba(0, 255, 153, 0.4)",
   ];
 
-  const labels = summarys.acciones.map((summary) => summary.estado);
+  // const labels = summarys.acciones.map((summary) => summary.estado);
+  const labels = summarys.acciones.map((summary) => summary.descripcion);
   const data = summarys.acciones.map((summary) => summary.cantidad);
 
   return (
@@ -146,7 +147,6 @@ export function PieChart() {
           labels: labels,
           datasets: [
             {
-              label: "Cantidad",
               data: data,
               backgroundColor: Colors,
               borderColor: Colors,
