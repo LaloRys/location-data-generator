@@ -14,11 +14,11 @@ export const publicRoutes = [
     name: "Elevation Google Api",
     path: "/elevationgoogle",
   },
-  {
-    id: "4",
-    name: "Summary",
-    path: "/summary",
-  },
+  // {
+  //   id: "4",
+  //   name: "Summary",
+  //   path: "/summary",
+  // },
   {
     id: "5",
     name: "Map",

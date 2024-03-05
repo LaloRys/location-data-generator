@@ -1,0 +1,46 @@
+{
+  "total": [
+    {
+      "descripcion": "TOTAL DE ACCESIONES",
+      "cantidad": 790,
+      "estado": "Total"
+    }
+  ],
+  "acciones": [
+    {
+      "descripcion": "Agregar coordenadas y completar datos de ubicación en el pasaporte",
+      "cantidad": 2,
+      "estado": "AG"
+    },
+    {
+      "descripcion": "Corregir datos en el pasaporte, específicamente el país",
+      "cantidad": 4,
+      "estado": "CD"
+    },
+    {
+      "descripcion": "Corregir la coordenada y en algunos casos completar datos de ubicación en el pasaporte.",
+      "cantidad": 555,
+      "estado": "CC"
+    },
+    {
+      "descripcion": "No hay información, no hay coordenadas, ni localidad, sólo viene el país.",
+      "cantidad": 1,
+      "estado": "NI"
+    },
+    {
+      "descripcion": "NOT SURE / sólo a una accesión puede sugerir una coordenada que puede ser probable.",
+      "cantidad": 4,
+      "estado": "NS"
+    },
+    {
+      "descripcion": "OK, todas estas accesiones están bien.",
+      "cantidad": 222,
+      "estado": "OK"
+    },
+    {
+      "descripcion": "WRONG / estas accesiones sí tienen coordenada pero están mal, sin posibilidad de sugerir coordenada ya que no hay información suficiente o la información que hay no hace match.",
+      "cantidad": 2,
+      "estado": "WG"
+    }
+  ]
+}
