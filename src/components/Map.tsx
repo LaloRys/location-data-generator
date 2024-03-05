@@ -22,7 +22,14 @@ export default function MapComponent({ data }: any) {
       <div>
         {data.map((item: any, index: any) =>
           item.Latitude && item.Longitude ? (
-            <Marker key={index} position={[item.Latitude, item.Longitude]} />
+            <Marker key={index} position={[item.Latitude, item.Longitude]}>
+              <Popup>
+                COMMENTS: <span className="font-bold">{item["COMMENTS"]}</span>{" "}
+                <br />
+                Accession Prefix:{" "}
+                <span className="font-bold">{item["Accession Prefix"]}</span>
+              </Popup>
+            </Marker>
           ) : null
         )}
       </div>
