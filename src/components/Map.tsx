@@ -6,7 +6,6 @@ import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 
 export default function MapComponent({ data }: any) {
-  console.log(data);
   return (
     <MapContainer
       center={[data[0].Latitude, data[0].Longitude]}
