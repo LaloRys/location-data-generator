@@ -1,5 +1,5 @@
 import React from "react";
-import { BarChart, PieChart, BubbleChart, ScatterChart } from "../ChartJS";
+import { BarChart, PieChart } from "../ChartJS";
 import summarys from "../../data/summary_part.json";
 
 function ChartContainer() {
@@ -35,20 +35,20 @@ export function StyledPieChart() {
   );
 }
 
-export function StyledBubbleChart() {
-  return (
-    <div className="bg-white p-4 rounded-lg shadow-xl">
-      <h3 className="text-lg font-semibold mb-2">BubbleChart</h3>
-      <BubbleChart />
-    </div>
-  );
-}
-export function StyledScatterChart() {
-  return (
-    <div className="bg-white p-4 rounded-lg shadow-xl">
-      <h3 className="text-lg font-semibold mb-2">Scatter</h3>
+// export function StyledBubbleChart() {
+//   return (
+//     <div className="bg-white p-4 rounded-lg shadow-xl">
+//       <h3 className="text-lg font-semibold mb-2">BubbleChart</h3>
+//       <BubbleChart />
+//     </div>
+//   );
+// }
+// export function StyledScatterChart() {
+//   return (
+//     <div className="bg-white p-4 rounded-lg shadow-xl">
+//       <h3 className="text-lg font-semibold mb-2">Scatter</h3>
 
-      <ScatterChart />
-    </div>
-  );
-}
+//       <ScatterChart />
+//     </div>
+//   );
+// }

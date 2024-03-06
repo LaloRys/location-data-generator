@@ -7,8 +7,6 @@ import data from "../../data/DATA_PRT.json";
 import {
   StyledPieChart,
   StyledBarChart,
-  StyledBubbleChart,
-  StyledScatterChart,
 } from "@/components/charts/ChartContainer";
 import { CountingSummary } from "@/components/summary/SummaryData";
 
@@ -46,8 +44,7 @@ async function TestPage() {
         <StyledPieChart />
         <CountingSummary />
       </div>
-      {/* <StyledScatterChart /> */}
-      {/* <StyledBubbleChart /> */}
+
       <div>
         <div className="grid grid-cols-3 gap-5 mx-4 mt-4">
           {data.map((item: any, index: any) => (
