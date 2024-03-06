@@ -39,160 +39,160 @@ const lineData = [
   },
 ];
 
-export function BubbleChart() {
-  const labels = data.map((label) => label["Accession Prefix"]);
+// export function BubbleChart() {
+//   const labels = data.map((label) => label["Accession Prefix"]);
 
-  // Define la estructura de un punto de datos
-  interface Ubicacion {
-    Latitude: number;
-    Longitude: number;
-  }
+//   // Define la estructura de un punto de datos
+//   interface Ubicacion {
+//     Latitude: number;
+//     Longitude: number;
+//   }
 
-  // Define la estructura de un punto de datos con recuento
-  interface UbicacionConRecuento extends Ubicacion {
-    count: number;
-  }
+//   // Define la estructura de un punto de datos con recuento
+//   interface UbicacionConRecuento extends Ubicacion {
+//     count: number;
+//   }
 
-  // Función para contar las ubicaciones repetidas
-  const contarUbicacionesRepetidas = (
-    data: Ubicacion[]
-  ): UbicacionConRecuento[] => {
-    // Objeto para almacenar las ubicaciones y su recuento
-    const ubicaciones: { [key: string]: number } = {};
+//   // Función para contar las ubicaciones repetidas
+//   const contarUbicacionesRepetidas = (
+//     data: Ubicacion[]
+//   ): UbicacionConRecuento[] => {
+//     // Objeto para almacenar las ubicaciones y su recuento
+//     const ubicaciones: { [key: string]: number } = {};
 
-    // Recorrer los datos y contar las ubicaciones repetidas
-    data.forEach((item) => {
-      const key = `${item.Latitude},${item.Longitude}`; // Clave única basada en latitud y longitud
-      ubicaciones[key] = (ubicaciones[key] || 0) + 1; // Incrementar el recuento
-    });
+//     // Recorrer los datos y contar las ubicaciones repetidas
+//     data.forEach((item) => {
+//       const key = `${item.Latitude},${item.Longitude}`; // Clave única basada en latitud y longitud
+//       ubicaciones[key] = (ubicaciones[key] || 0) + 1; // Incrementar el recuento
+//     });
 
-    // Crear un nuevo objeto con latitud, longitud y recuento
-    const ubicacionesConRecuento: UbicacionConRecuento[] = Object.keys(
-      ubicaciones
-    ).map((key) => {
-      const [latitud, longitud] = key.split(",").map(parseFloat); // Parsear latitud y longitud como números
-      return {
-        x: latitud,
-        y: longitud,
-        r: ubicaciones[key],
-      };
-    });
+//     // Crear un nuevo objeto con latitud, longitud y recuento
+//     const ubicacionesConRecuento: UbicacionConRecuento[] = Object.keys(
+//       ubicaciones
+//     ).map((key) => {
+//       const [latitud, longitud] = key.split(",").map(parseFloat); // Parsear latitud y longitud como números
+//       return {
+//         x: latitud,
+//         y: longitud,
+//         r: ubicaciones[key],
+//       };
+//     });
 
-    return ubicacionesConRecuento;
-  };
+//     return ubicacionesConRecuento;
+//   };
 
-  // Filtrar los datos para excluir objetos con valores null en Latitude y Longitude
-  const datosFiltrados = data.filter(
-    (item) => item.Latitude !== null && item.Longitude !== null
-  );
+//   // Filtrar los datos para excluir objetos con valores null en Latitude y Longitude
+//   const datosFiltrados = data.filter(
+//     (item) => item.Latitude !== null && item.Longitude !== null
+//   );
 
-  // Obtener las ubicaciones con recuento
-  const locations = contarUbicacionesRepetidas(datosFiltrados);
+//   // Obtener las ubicaciones con recuento
+//   const locations = contarUbicacionesRepetidas(datosFiltrados);
 
-  // Normalizar los valores de r
-  const maxCount = Math.max(...locations.map((location) => location.r));
-  const locationsNormalized = locations.map((location) => ({
-    x: location.x,
-    y: location.y,
-    r: location.r / maxCount,
-  }));
+//   // Normalizar los valores de r
+//   const maxCount = Math.max(...locations.map((location) => location.r));
+//   const locationsNormalized = locations.map((location) => ({
+//     x: location.x,
+//     y: location.y,
+//     r: location.r / maxCount,
+//   }));
 
-  return (
-    <Bubble
-      data={{
-        labels,
-        datasets: [
-          {
-            label: "Dataset 1",
-            data: locationsNormalized,
-            backgroundColor: Colors,
-            borderColor: Colors,
-            borderWidth: 1,
-          },
-        ],
-      }}
-    ></Bubble>
-  );
-}
+//   return (
+//     <Bubble
+//       data={{
+//         labels,
+//         datasets: [
+//           {
+//             label: "Dataset 1",
+//             data: locationsNormalized,
+//             backgroundColor: Colors,
+//             borderColor: Colors,
+//             borderWidth: 1,
+//           },
+//         ],
+//       }}
+//     ></Bubble>
+//   );
+// }
 
-export function ScatterChart() {
-  const labels = data.map((label) => label["Accession Prefix"]);
+// export function ScatterChart() {
+//   const labels = data.map((label) => label["Accession Prefix"]);
 
-  // Define la estructura de un punto de datos
-  interface Ubicacion {
-    Latitude: number;
-    Longitude: number;
-  }
+//   // Define la estructura de un punto de datos
+//   interface Ubicacion {
+//     Latitude: number;
+//     Longitude: number;
+//   }
 
-  // Define la estructura de un punto de datos con recuento
-  interface UbicacionConRecuento extends Ubicacion {
-    count: number;
-  }
+//   // Define la estructura de un punto de datos con recuento
+//   interface UbicacionConRecuento extends Ubicacion {
+//     count: number;
+//   }
 
-  // Función para contar las ubicaciones repetidas
-  const contarUbicacionesRepetidas = (
-    data: Ubicacion[]
-  ): UbicacionConRecuento[] => {
-    // Objeto para almacenar las ubicaciones y su recuento
-    const ubicaciones: { [key: string]: number } = {};
+//   // Función para contar las ubicaciones repetidas
+//   const contarUbicacionesRepetidas = (
+//     data: Ubicacion[]
+//   ): UbicacionConRecuento[] => {
+//     // Objeto para almacenar las ubicaciones y su recuento
+//     const ubicaciones: { [key: string]: number } = {};
 
-    // Recorrer los datos y contar las ubicaciones repetidas
-    data.forEach((item) => {
-      const key = `${item.Latitude},${item.Longitude}`; // Clave única basada en latitud y longitud
-      ubicaciones[key] = (ubicaciones[key] || 0) + 1; // Incrementar el recuento
-    });
+//     // Recorrer los datos y contar las ubicaciones repetidas
+//     data.forEach((item) => {
+//       const key = `${item.Latitude},${item.Longitude}`; // Clave única basada en latitud y longitud
+//       ubicaciones[key] = (ubicaciones[key] || 0) + 1; // Incrementar el recuento
+//     });
 
-    // Crear un nuevo objeto con latitud, longitud y recuento
-    const ubicacionesConRecuento: UbicacionConRecuento[] = Object.keys(
-      ubicaciones
-    ).map((key) => {
-      const [latitud, longitud] = key.split(",").map(parseFloat); // Parsear latitud y longitud como números
-      return {
-        // x: [latitud, longitud],
-        x: 5,
-        y: ubicaciones[key],
-      };
-    });
+//     // Crear un nuevo objeto con latitud, longitud y recuento
+//     const ubicacionesConRecuento: UbicacionConRecuento[] = Object.keys(
+//       ubicaciones
+//     ).map((key) => {
+//       const [latitud, longitud] = key.split(",").map(parseFloat); // Parsear latitud y longitud como números
+//       return {
+//         // x: [latitud, longitud],
+//         x: 5,
+//         y: ubicaciones[key],
+//       };
+//     });
 
-    return ubicacionesConRecuento;
-  };
+//     return ubicacionesConRecuento;
+//   };
 
-  // Filtrar los datos para excluir objetos con valores null en Latitude y Longitude
-  const datosFiltrados = data.filter(
-    (item) => item.Latitude !== null && item.Longitude !== null
-  );
+//   // Filtrar los datos para excluir objetos con valores null en Latitude y Longitude
+//   const datosFiltrados = data.filter(
+//     (item) => item.Latitude !== null && item.Longitude !== null
+//   );
 
-  // Obtener las ubicaciones con recuento
-  const locations = contarUbicacionesRepetidas(datosFiltrados);
+//   // Obtener las ubicaciones con recuento
+//   const locations = contarUbicacionesRepetidas(datosFiltrados);
 
-  return (
-    <Scatter
-      data={{
-        labels,
-        datasets: [
-          {
-            label: "Dataset 1",
-            data: locations,
-            backgroundColor: Colors,
-            borderColor: Colors,
-            borderWidth: 1,
-          },
-          // {
-          //   label: "Dataset 2",
-          //   data: [
-          //     { x: 25, y: 15, r: 20 },
-          //     { x: 30, y: 20, r: 25 },
-          //     { x: 35, y: 10, r: 30 },
-          //   ],
-          //   backgroundColor: "rgba(54, 162, 235, 0.2)",
-          //   borderColor: "rgba(54, 162, 235, 1)",
-          //   borderWidth: 1,
-          // },
-        ],
-      }}
-    ></Scatter>
-  );
-}
+//   return (
+//     <Scatter
+//       data={{
+//         labels,
+//         datasets: [
+//           {
+//             label: "Dataset 1",
+//             data: locations,
+//             backgroundColor: Colors,
+//             borderColor: Colors,
+//             borderWidth: 1,
+//           },
+//           // {
+//           //   label: "Dataset 2",
+//           //   data: [
+//           //     { x: 25, y: 15, r: 20 },
+//           //     { x: 30, y: 20, r: 25 },
+//           //     { x: 35, y: 10, r: 30 },
+//           //   ],
+//           //   backgroundColor: "rgba(54, 162, 235, 0.2)",
+//           //   borderColor: "rgba(54, 162, 235, 1)",
+//           //   borderWidth: 1,
+//           // },
+//         ],
+//       }}
+//     ></Scatter>
+//   );
+// }
 
 export function LineChart({ data }: any) {
   return (
