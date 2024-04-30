@@ -21,6 +21,7 @@ import Link from "next/link"
 import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import Image from "next/image"
 
 export function Landing() {
   return (
@@ -86,7 +87,7 @@ export function Landing() {
                 </p>
               </div>
             </div>
-            <img
+            <Image
               alt="Geocoding Illustration"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
               height="310"
@@ -194,21 +195,21 @@ export function Landing() {
   )
 }
 
-function CheckIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  )
-}
+// function CheckIcon(props) {
+//   return (
+//     <svg
+//       {...props}
+//       xmlns="http://www.w3.org/2000/svg"
+//       width="24"
+//       height="24"
+//       viewBox="0 0 24 24"
+//       fill="none"
+//       stroke="currentColor"
+//       strokeWidth="2"
+//       strokeLinecap="round"
+//       strokeLinejoin="round"
+//     >
+//       <polyline points="20 6 9 17 4 12" />
+//     </svg>
+//   )
+// }
