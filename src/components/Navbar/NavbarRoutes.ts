@@ -26,7 +26,7 @@ export const publicRoutes = [
   },
   {
     id: "6",
-    name: "TEST",
+    name: "Summary",
     path: "/test",
   },
 ];

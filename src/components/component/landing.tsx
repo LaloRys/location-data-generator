@@ -30,10 +30,10 @@ export function Landing() {
         <div className="container px-4 md:px-6 text-white text-center">
           <div className="space-y-4">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-            Geocodificación Simplificada: Google Maps y OpenCage a Tu Servicio
+            Simplified Geocoding: Google Maps and OpenCage at Your Service
             </h1>
             <p className="mx-auto max-w-[700px] text-lg md:text-xl">
-            Sube tu archivo de Excel y deja que nuestra plataforma haga el trabajo pesado por ti. Con la potencia de las API de geocodificación de Google Maps y OpenCage, transformamos tus direcciones en coordenadas precisas y nombres de ubicación.
+            Upload your Excel file and let our platform do the heavy lifting for you. With the power of Google Maps and OpenCage geocoding APIs, we transform your addresses into precise coordinates and location names.
             </p>
             <div>
               <Link
@@ -60,6 +60,7 @@ export function Landing() {
                 <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                   Our powerful reverse geocoding capabilities allow you to seamlessly translate latitude and longitude
                   coordinates into human-readable addresses.
+                  Leveraging the powerful geocoding APIs from Google and OpenCage, our service ensures precise and reliable results at every turn.
                 </p>
               </div>
               <div className="space-y-2">
@@ -70,20 +71,18 @@ export function Landing() {
                   Process Thousands of Locations at Once
                 </h2>
                 <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Streamline your workflows with our batch processing feature, enabling you to geocode multiple
-                  locations in a single request.
+                Optimize your workflows with our batch processing feature. Whether you need to geocode a few locations or thousands, our platform can handle it all in a single request, delivering fast and efficient results.
                 </p>
               </div>
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-[#4c51bf] px-3 py-1 text-sm text-white">
-                  Customizable Results
+                Extra Service
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Tailor the Data to Your Needs
+                  Elevation with Google Maps API
                 </h2>
                 <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Customize the geocoding results to include only the information you need, from detailed address
-                  components to geographic coordinates.
+                Enhance your geospatial data with the ability to obtain elevation along with location using the Google Maps Elevation API. Simply input your API key and access this additional functionality for even more detailed insights.
                 </p>
               </div>
             </div>
@@ -91,7 +90,7 @@ export function Landing() {
               alt="Geocoding Illustration"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
               height="310"
-              src="/placeholder.svg"
+              src="/world.webp"
               width="550"
             />
           </div>
