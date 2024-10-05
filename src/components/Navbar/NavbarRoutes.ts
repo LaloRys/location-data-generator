@@ -1,17 +1,17 @@
 export const publicRoutes = [
   {
     id: "1",
-    name: "Google Geocoding Api",
+    name: "Google Geocoding",
     path: "/googlegeocoding",
   },
   {
     id: "2",
-    name: "OpenCage Api",
+    name: "OpenCage",
     path: "/opencage",
   },
   {
     id: "3",
-    name: "Elevation Google Api",
+    name: "Elevation Google",
     path: "/elevationgoogle",
   },
   // {
@@ -21,13 +21,13 @@ export const publicRoutes = [
   // },
   {
     id: "5",
-    name: "Map",
-    path: "/map",
+    name: "Summary",
+    path: "/test",
   },
   {
     id: "6",
-    name: "Summary",
-    path: "/test",
+    name: "Map",
+    path: "/map",
   },
 ];
 
